@@ -3,6 +3,22 @@ const visitorName = prompt("Masukkan nama Anda:");
 document.getElementById("visitor-name").textContent = visitorName || "Pengunjung";
 
 //Carousel image slide sources w3school.com
+//automatic slide
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("slide");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+//manual slide
 var slideIndex = 1;
 showDivs(slideIndex);
 
