@@ -1,0 +1,152 @@
+body, h1, h2, p, ul, li, input, select, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: dodgerblue;
+    color: white;
+}
+
+.logo {
+    background-image: url('https://s3-ap-southeast-1.amazonaws.com/revou-blog/2019/12/Logo-RevoU-5.png'); /* Ganti dengan URL gambar logo */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 150px; /* Sesuaikan ukuran logo */
+    height: 50px; /* Sesuaikan tinggi */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 0.8px;
+}
+
+nav a {
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: white;
+    background-color:rgb(3, 86, 174);
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin: 50px 0; /* Menambahkan jarak atas dan bawah */
+    padding: 20px; /* Memberikan ruang di dalam section */
+}
+
+.carousel {
+    width: 100%;
+    max-width: 960;
+    height: 75vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.message-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+
+#output {
+    width: 45%;
+    background: #f4f4f4;
+    padding: 18px;
+    border-radius: 5px;
+}
+
+.namaku {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+footer {
+    text-align: right;
+    padding: 20px;
+    background: dodgerblue;
+    color: white;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .message-container {
+        flex-direction: column;
+    }
+    form, #output {
+        width: 100%;
+    }
+}

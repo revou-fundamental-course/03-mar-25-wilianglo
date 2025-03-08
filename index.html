@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">My Profile</a></li>
+                <li><a href="#achievements">My Achievements</a></li>
+                <li><a href="#message">Message Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Hi, <span id="visitor-name"></span>. Selamat datang di website Portofolio saya</h1> <br/>
+            <div class="carousel">
+                <img src="assets/image1.jpg" class="slide" alt="Gambar 1">
+                <img src="assets/image2.jpg" class="slide" alt="Gambar 2">
+                <img src="assets/image3.jpg" class="slide" alt="Gambar 3">
+            </div>
+        </section>
+
+        <section id="profile">
+            <h2>My Profile</h2>
+            <p>Saya adalah seorang IT Support profesional dengan pengalaman dalam menangani berbagai permasalahan teknis di perusahaan.
+                Keahlian saya mencakup administrasi sistem, pemeliharaan jaringan, dan dukungan teknis untuk pengguna.
+                Saya memiliki kemampuan dalam mengelola Microsoft 365, memastikan keamanan data, serta mengoptimalkan infrastruktur IT agar
+                operasional perusahaan berjalan lancar.</p>
+             <p>Dalam peran saya sebagai IT Support, saya bertanggung jawab untuk mengatasi masalah perangkat keras dan lunak,
+                melakukan pemeliharaan server, serta memberikan pelatihan kepada karyawan agar mereka lebih memahami penggunaan teknologi.
+                Saya selalu berusaha untuk memberikan solusi yang cepat dan efektif dalam setiap tantangan yang muncul.</p>
+        </section>
+
+        <section id="achievements">
+            <h2>My Achievements</h2>
+            <ul>
+                <li>Berhasil mengimplementasikan sistem backup dan restore yang meningkatkan keamanan data perusahaan.</li>
+                <li>Mengoptimalkan jaringan perusahaan sehingga meningkatkan efisiensi dan kecepatan akses data.</li>
+                <li>Mendukung lebih dari 150 pengguna dalam administrasi Microsoft 365 dan pemecahan masalah teknis.</li>
+                <li>Menyusun panduan IT untuk membantu karyawan memahami penggunaan perangkat lunak dan keamanan siber.</li>
+                <li>Memimpin proyek migrasi server dengan downtime minimal dan hasil yang optimal bagi operasional bisnis.</li>
+                <li>Sebagai Administrator di sistem Project Management Solution Wrench.</li>
+            </ul>
+        </section>
+
+        <section id="message">
+            <h2>Message Us</h2>
+            <div class="message-container">
+                <form id="message-form">
+                    <label>Nama: <input type="text" id="name" required></label>
+                    <label>Tanggal Lahir: <input type="date" id="birthdate" required value="today"></label>
+                    <label>Jenis Kelamin: 
+                        <select id="gender">
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </label>
+                    <label>Pesan: <textarea id="message-text" required></textarea></label>
+                    <button type="submit">Kirim</button>
+                </form>
+                <div id="output"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Created by <span class="namaku">William Lokita</span></p>
+    </footer>
+    <script src="js/script.js">
+
+    </script>
+</body>
+</html>
