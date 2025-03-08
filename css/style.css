@@ -60,7 +60,7 @@ section {
 
 .carousel {
     width: 100%;
-    max-width: 960;
+    max-width: 800;
     height: 75vh;
     overflow: hidden;
     position: relative;
