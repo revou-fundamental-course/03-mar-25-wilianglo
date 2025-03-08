@@ -2,48 +2,25 @@
 const visitorName = prompt("Masukkan nama Anda:");
 document.getElementById("visitor-name").textContent = visitorName || "Pengunjung";
 
-// Carousel otomatis
-let currentIndex = 0;
-const slidesContainer = document.querySelector(".carousel");
+//Carousel image slide sources w3school.com
+var slideIndex = 1;
+showDivs(slideIndex);
 
-const imageUrls = [
-    "assets/image1.jpg",
-    "assets/image2.jpg",
-    "assets/image3.jpg"
-];
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
 
-imageUrls.forEach((url, index) => {
-    const img = document.createElement("img");
-    img.src = url;
-    img.classList.add("slide");
-    img.alt = `Gambar ${index + 1}`;
-    img.style.width = "100%";
-    img.style.height = "auto";
-    slidesContainer.appendChild(img);
-});
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("slide");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".slide");
-    if (slides.length === 0) return;
-    
-    slides.forEach(slide => {
-        slide.style.display = "none";
-    });
-    
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.display = i === index ? "block" : "none";
-        });
-    }
-    
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-    }
-    
-    showSlide(currentIndex);
-    setInterval(nextSlide, 3000);
-});
 // Set default tanggal lahir ke hari ini
 const today = new Date().toISOString().split('T')[0];
 document.getElementById("birthdate").value = today;
