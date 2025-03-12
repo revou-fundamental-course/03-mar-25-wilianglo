@@ -206,6 +206,24 @@ footer {
     }
 }
 
+@media only screen and (max-width: 900px) {
+    .message-container {
+        margin-top: 1.2rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;}
+    form, #output {
+            width: 100%;
+            margin-top: 0.8rem;
+        }
+    #output {
+        max-width: 440px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     header {
         flex-direction: column;
