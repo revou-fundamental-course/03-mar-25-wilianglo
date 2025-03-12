@@ -45,31 +45,74 @@ document.getElementById("birthdate").value = today;
 const form = document.getElementById("message-form");
 const output = document.getElementById("output");
 
+// validasi on focus type input nama
+const nama = document.getElementById('name');
+
+nama.addEventListener('click', (e)=>{
+  e.preventDefault();
+  const namaOutput = document.getElementById("nama_output");
+  const tgllhrOutput = document.getElementById("tgllhr_output");
+  const kelaminOutput = document.getElementById("kelamin_output");
+  const pesanOutput = document.getElementById("pesan_output");
+      namaOutput.innerHTML = "";
+      tgllhrOutput.innerHTML = "";
+      kelaminOutput.innerHTML = "";
+      pesanOutput.innerHTML = "";
+})
 
 form.addEventListener("submit", function (event) {
+  // outputReset();
     event.preventDefault();
     
     const name = document.getElementById("name").value.trim();
     const birthdate = document.getElementById("birthdate").value;
     const gender = document.getElementById("gender").value;
     const messageText = document.getElementById("message-text").value.trim();
+    const error = document.getElementById("error-message");
+
+    if (!name || name == '') {
+      alert("Nama harus diisi!");
+      error.innerHTML = "Nama harus diisi!";
+      setInterval(() => {
+        error.innerHTML = "";
+      }, 3000);
+      return false;
+      } else if (!birthdate) {
+        alert("Tanggal harus dilengkapin!!");
+        error.innerHTML = "Tanggal harus dilengkapin!!";
+        return false;
+      }
     
-    if (!name || !birthdate) {
-        alert("Nama dan Tanggal Lahir harus diisi!");
-        return;
-    }
+    const namaOutput = document.getElementById("nama_output");
+    const tgllhrOutput = document.getElementById("tgllhr_output");
+    const kelaminOutput = document.getElementById("kelamin_output");
+    const pesanOutput = document.getElementById("pesan_output");
+
+    namaOutput.innerHTML = name;
+    tgllhrOutput.innerHTML = formatTanggal(birthdate);
+    kelaminOutput.innerHTML = gender;
+    pesanOutput.innerHTML = messageText;
     
-    output.innerHTML = `<p><strong>Nama:</strong> ${name}</p>
-                        <p><strong>Tanggal Lahir:</strong> ${formatTanggal(birthdate)}</p>
-                        <p><strong>Jenis Kelamin:</strong> ${gender}</p>
-                        <p><strong>Pesan:</strong> ${messageText}</p>`;
+    // output.innerHTML = `<p><strong>Nama:</strong> ${name}</p>
+    //                     <p><strong>Tanggal Lahir:</strong> ${formatTanggal(birthdate)}</p>
+    //                     <p><strong>Jenis Kelamin:</strong> ${gender}</p>
+    //                     <p><strong>Pesan:</strong> ${messageText}</p>`;
     
     form.reset();
+    document.getElementById("birthdate").value = today;
+    // function outputReset() {
+    //   namaOutput.innerHTML = "";
+    //   tgllhrOutput.innerHTML = "";
+    //   kelaminOutput.innerHTML = "";
+    //   pesanOutput.innerHTML = "";
+    // }
 
     // Fungsi untuk format tanggal ke DD-Month-YYYY
     function formatTanggal(tanggal) {
         let options = { day: "2-digit", month: "long", year: "numeric" };
                 return new Date(tanggal).toLocaleDateString("en-GB", options).replace(" ", "-");
     }
+
+
 });
 

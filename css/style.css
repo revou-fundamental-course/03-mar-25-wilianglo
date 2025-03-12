@@ -30,10 +30,12 @@ header {
 nav ul {
     list-style: none;
     display: flex;
+
 }
 
 nav ul li {
-    margin: 0 0.8px;
+    margin: 0.5rem 0.8px;
+
 }
 
 nav a {
@@ -42,12 +44,14 @@ nav a {
     border-radius: 5px;
     text-decoration: none;
     color: white;
+    width: 100%;
+    border: 1px solid white;
+
 }
 
 nav a:hover {
-    color: white;
-    background-color:rgb(3, 86, 174);
-}
+    color: dodgerblue;
+    background-color:white;}
 
 main {
     padding: 20px;
@@ -60,10 +64,11 @@ section {
 
 .carousel {
     width: 100%;
-    max-width: 800;
+    max-width: 1200px;
     height: 75vh;
     overflow: hidden;
     position: relative;
+    margin: auto;
 }
 
 .slide {
@@ -120,6 +125,11 @@ form button:hover {
     background-color: #0056b3;
 }
 
+#error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 1.2rem;
+}
 
 #output {
     width: 45%;
@@ -148,5 +158,49 @@ footer {
     }
     form, #output {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        /* width: 100%; */
+
+    }
+    nav {
+        width: 100%;
+        /* border: 1px solid white; */
+    }
+    /* nav ul {
+        border: 1px solid white;
+    } */
+    nav ul li {
+        text-align: center;
+        /* padding: 8px; */
+        width: 100%;
+        margin: 1px 1px;
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+    nav a:hover {
+        color: dodgerblue;
+        background-color:white;
+    }
+    nav a {
+        display: block;
+        border: 0;
+    }
+
+    .logo {
+        margin-bottom: 14px;
     }
 }

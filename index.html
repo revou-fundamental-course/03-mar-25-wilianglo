@@ -59,18 +59,24 @@
             <h2>Message Us</h2>
             <div class="message-container">
                 <form id="message-form">
-                    <label>Nama: <input type="text" id="name" required></label>
-                    <label>Tanggal Lahir: <input type="date" id="birthdate" required value="today"></label>
+                    <label>Nama: <input type="text" id="name"></label>
+                    <label>Tanggal Lahir: <input type="date" id="birthdate" required></label>
                     <label>Jenis Kelamin: 
                         <select id="gender">
                             <option value="Laki-laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
                         </select>
                     </label>
-                    <label>Pesan: <textarea id="message-text" required></textarea></label>
+                    <label>Pesan: <textarea id="message-text"></textarea></label>
                     <button type="submit">Kirim</button>
+                    <p id="error-message"></p>
                 </form>
-                <div id="output"></div>
+                <div id="output">
+                    <p>Nama          :<span id="nama_output"></span></p>
+                    <p>Tanggal lahir :<span id="tgllhr_output"></span></p>
+                    <p>Jenis Kelamin :<span id="kelamin_output"></span></p>
+                    <p>Pesan         :<span id="pesan_output"></span></p>
+                </div>
             </div>
         </section>
     </main>
