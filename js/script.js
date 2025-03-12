@@ -40,7 +40,7 @@ function showDivs(n) {
 // Set default tanggal lahir ke hari ini
 const today = new Date().toISOString().split('T')[0];
 document.getElementById("birthdate").value = today;
-
+document.getElementById("male").checked = true;
 // Validasi dan submit form
 const form = document.getElementById("message-form");
 const output = document.getElementById("output");
@@ -66,9 +66,11 @@ form.addEventListener("submit", function (event) {
     
     const name = document.getElementById("name").value.trim();
     const birthdate = document.getElementById("birthdate").value;
-    const gender = document.getElementById("gender").value;
+    // const gender = document.getElementById("gender").value;
     const messageText = document.getElementById("message-text").value.trim();
     const error = document.getElementById("error-message");
+    const radioButtons = document.querySelectorAll(".radio-group input[type='radio']");
+    const maleRadio = document.getElementById("male");
 
     if (!name || name == '') {
       alert("Nama harus diisi!");
@@ -83,15 +85,23 @@ form.addEventListener("submit", function (event) {
         return false;
       }
     
-    const namaOutput = document.getElementById("nama_output");
-    const tgllhrOutput = document.getElementById("tgllhr_output");
-    const kelaminOutput = document.getElementById("kelamin_output");
-    const pesanOutput = document.getElementById("pesan_output");
+      
+      const namaOutput = document.getElementById("nama_output");
+      const tgllhrOutput = document.getElementById("tgllhr_output");
+      const kelaminOutput = document.getElementById("kelamin_output");
+      const pesanOutput = document.getElementById("pesan_output");
+
+      radioButtons.forEach(radio => {
+          if (radio.checked === true) {
+            kelaminOutput.innerHTML = radio.value;
+          }
+      });
 
     namaOutput.innerHTML = name;
     tgllhrOutput.innerHTML = formatTanggal(birthdate);
-    kelaminOutput.innerHTML = gender;
+    // kelaminOutput.innerHTML = gender;
     pesanOutput.innerHTML = messageText;
+    
     
     // output.innerHTML = `<p><strong>Nama:</strong> ${name}</p>
     //                     <p><strong>Tanggal Lahir:</strong> ${formatTanggal(birthdate)}</p>
@@ -100,6 +110,7 @@ form.addEventListener("submit", function (event) {
     
     form.reset();
     document.getElementById("birthdate").value = today;
+    maleRadio.checked = true;
     // function outputReset() {
     //   namaOutput.innerHTML = "";
     //   tgllhrOutput.innerHTML = "";

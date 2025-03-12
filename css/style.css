@@ -30,12 +30,10 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-
 }
 
 nav ul li {
     margin: 0.5rem 0.8px;
-
 }
 
 nav a {
@@ -46,7 +44,6 @@ nav a {
     color: white;
     width: 100%;
     border: 1px solid white;
-
 }
 
 nav a:hover {
@@ -81,13 +78,14 @@ section {
 }
 
 .message-container {
+    margin-top: 1.2rem;
     display: flex;
     justify-content: space-between;
 }
 
 form {
     width: 100%;
-    max-width: 400px;
+    max-width: 440px;
     padding: 20px;
     border: 2px solid #007BFF;
     border-radius: 10px;
@@ -99,6 +97,18 @@ form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+}
+
+.radio-group {
+    margin: 12px auto;
+}
+
+.radio-group > label {
+    display: inline-block;
+}
+
+#male, #female {
+    width: auto;
 }
 
 form input, form select, form textarea {
@@ -136,12 +146,43 @@ form button:hover {
     background: #f4f4f4;
     padding: 18px;
     border-radius: 5px;
+    border: 2px solid dodgerblue;
+    box-shadow: 2px 2px 10px rgba(32, 25, 150, 0.1);
 }
 
 .namaku {
     font-weight: bold;
     font-style: italic;
     font-size: 1.2rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+.baris, .col2, .col3 {
+    vertical-align: top;
+}
+
+.baris {
+    width: 25%;
+    font-weight: bold;
+}
+.col2 {
+    width: 5%;
+    font-weight: bold;
+}
+.col3 {
+    width: 70%
+}
+
+#pesan_output {
+    text-align: justify;
+}
+
+tr {
+    height: 3rem;
 }
 
 footer {
@@ -158,6 +199,10 @@ footer {
     }
     form, #output {
         width: 100%;
+        margin-top: 1rem;
+    }
+    span {
+        font-size: 12px;
     }
 }
 
@@ -165,6 +210,10 @@ footer {
     header {
         flex-direction: column;
         width: 100%;
+    }
+    form, #output {
+        width: 80%;
+        margin-top: 0.8rem;
     }
     nav ul {
         list-style: none;
@@ -176,6 +225,7 @@ footer {
         /* width: 100%; */
 
     }
+
     nav {
         width: 100%;
         /* border: 1px solid white; */
@@ -203,4 +253,5 @@ footer {
     .logo {
         margin-bottom: 14px;
     }
+
 }

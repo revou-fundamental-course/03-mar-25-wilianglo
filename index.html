@@ -61,22 +61,55 @@
                 <form id="message-form">
                     <label>Nama: <input type="text" id="name"></label>
                     <label>Tanggal Lahir: <input type="date" id="birthdate" required></label>
-                    <label>Jenis Kelamin: 
+                    <!-- <label>Jenis Kelamin: 
                         <select id="gender">
                             <option value="Laki-laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
-                        </select>
+                        </select> -->
+                        <div class="radio-group">
+                            <label>Jenis Kelamin: </label> <br>
+                            <input type="radio" name="gender" value="Laki-laki" id="male" required>
+                            <label for="male">Laki-laki</label> <br>
+                            <input type="radio" name="gender" value="Perempuan" id="female" required>
+                            <label for="female">Perempuan</label>
+                        </div>
                     </label>
                     <label>Pesan: <textarea id="message-text"></textarea></label>
                     <button type="submit">Kirim</button>
                     <p id="error-message"></p>
                 </form>
                 <div id="output">
-                    <p>Nama          :<span id="nama_output"></span></p>
-                    <p>Tanggal lahir :<span id="tgllhr_output"></span></p>
-                    <p>Jenis Kelamin :<span id="kelamin_output"></span></p>
-                    <p>Pesan         :<span id="pesan_output"></span></p>
-                </div>
+                    <!-- <p>Nama <span class="kutip">:</span><span id="nama_output"></span></p>
+                    <p>Tanggal lahir <span class="kutip">:</span><span id="tgllhr_output"></span></p>
+                    <p>Jenis Kelamin <span class="kutip">:</span><span id="kelamin_output"></span></p>
+                    <p>Pesan <span class="kutip">:</span><span id="pesan_output"></span></p> -->
+                    <!-- <p>Radio kelamin :<span id="radio_output"></span></p> -->
+                    <table>
+                        <tr>
+                            <td class="baris">Name</td>
+                            <td class="col2">:</td>
+                            <td class="col3"><span id="nama_output"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="baris">Tanggal Lahir</td>
+                            <td class="col2">:</td>
+                            <td class="col3"><span id="tgllhr_output"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="baris">Jenis Kelamin</td>
+                            <td class="col2">:</td>
+                            <td class="col3"><span id="kelamin_output"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="baris">Pesan</td>
+                            <td class="col2">:</td>
+                            <td class="col3"><span id="pesan_output"></span></td>
+                        </tr>
+                        <!-- pesan -->
+                        <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, laboriosam iure commodi ad quidem ipsa aspernatur optio. Aperiam soluta porro, corporis odio laboriosam nemo commodi. Incidunt exercitationem ad placeat at veritatis alias repudiandae cumque esse. Est expedita eveniet, eos commodi impedit nulla, dignissimos id soluta adipisci molestiae eligendi quasi magnam. -->
+                    </table>
+                </div>      
+
             </div>
         </section>
     </main>
