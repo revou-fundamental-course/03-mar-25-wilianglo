@@ -186,11 +186,12 @@ tr {
 }
 
 footer {
-    text-align: right;
+    text-align: center;
     padding: 20px;
     background: dodgerblue;
     color: white;
     margin-top: 20px;
+
 }
 
 @media (max-width: 768px) {
