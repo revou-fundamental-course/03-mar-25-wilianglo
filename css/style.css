@@ -68,6 +68,11 @@ section {
     margin: auto;
 }
 
+#visitor-name {
+    font-size: 1em;
+    font-weight: 400;
+}
+
 .slide {
     width: 100%;
     display: none;
